@@ -17,6 +17,9 @@ namespace LV2 {
 			this.dice.Clear();
 			this.resultForEachRoll.Clear();
 		}
+		public void RemoveCertainDice(int nSides) {
+			this.dice.RemoveAll((e) => e.numberOfSides == nSides);
+		}
 		public void RollAllDice() {
 			this.resultForEachRoll.Clear();
 			foreach (Die die in dice) {

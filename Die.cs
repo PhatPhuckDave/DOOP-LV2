@@ -4,7 +4,8 @@ using System.Text;
 
 namespace LV2 {
 	class Die {
-		private int numberOfSides;
+		public int numberOfSides { get; set; }
+
 		private Random randomGenerator = RandomGenerator.GetInstance();
 		public Die(int numberOfSides) {
 			this.numberOfSides = numberOfSides;
