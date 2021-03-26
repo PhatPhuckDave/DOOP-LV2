@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace LV3 {
 	class Program {
 		static void Main(string[] args) {
+			// 1. toboze
 			//Dataset data = new Dataset("csv.txt");
 			//IList<List<string>> fileData = data.GetData();
 			//foreach (var row in fileData) {
@@ -25,18 +26,32 @@ namespace LV3 {
 			//}
 
 
-			MatrixGenerator generator = MatrixGenerator.GetInstance();
-			double[][] matrix = generator.CreateMatrix(6, 9);
-			foreach (var row in matrix) {
-				foreach (var element in row)
-					Console.Write(element + " ");
-				Console.WriteLine("");
-			}
+			// ko bajage 2.
+			//MatrixGenerator generator = MatrixGenerator.GetInstance();
+			//double[][] matrix = generator.CreateMatrix(6, 9);
+			//foreach (var row in matrix) {
+			//	foreach (var element in row)
+			//		Console.Write(element + " ");
+			//	Console.WriteLine("");
+			//}
 
-			FileLogger logger = FileLogger.GetInstance();
-			logger.Log("XDDDDDDDDDD");
-			logger.filePath = "log2.txt";
-			logger.Log("XDDDDDDD");
+
+			// 3. kao
+			//FileLogger logger = FileLogger.GetInstance();
+			//logger.Log("XDDDDDDDDDD");
+			//logger.filePath = "log2.txt";
+			//logger.Log("XDDDDDDD");
+
+
+			// idemo malo gradit i enumat
+			//ConsoleNotification consoleNotification = new ConsoleNotification("ja", "prvi", "bogec", DateTime.Now, Category.ALERT, ConsoleColor.Cyan);
+			//NotificationManager manager = new NotificationManager();
+			//manager.Display(consoleNotification);
+
+			NotificationBuilder builder = new NotificationBuilder();
+			builder.SetAuthor("ivan").SetColor(ConsoleColor.Red).SetTime(DateTime.Now);
+			NotificationManager manager = new NotificationManager();
+			manager.Display(builder.Build());
 		}
 	}
 }
