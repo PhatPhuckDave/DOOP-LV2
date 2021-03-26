@@ -48,10 +48,24 @@ namespace LV3 {
 			//NotificationManager manager = new NotificationManager();
 			//manager.Display(consoleNotification);
 
-			NotificationBuilder builder = new NotificationBuilder();
-			builder.SetAuthor("ivan").SetColor(ConsoleColor.Red).SetTime(DateTime.Now);
 			NotificationManager manager = new NotificationManager();
+
+			NotificationBuilder builder = new NotificationBuilder();
+			Director director = new Director(builder);
+			manager.Display(director.CreateINFONotification("XDDDDDDDDDDDDDDDDDDD"));
+			manager.Display(director.CreateALERTNotification("XDDDDDDDDDDDDDDDDDDD"));
+			manager.Display(director.CreateERRORNotification("XDDDDDDDDDDDDDDDDDDD"));
+
+			builder.SetAuthor("ivan")
+				.SetColor(ConsoleColor.Red)
+				.SetTime(DateTime.Now)
+				.SetLevel(Category.INFO);
 			manager.Display(builder.Build());
+
+			builder.SetAuthor("Pero")
+				.SetColor(ConsoleColor.Green);
+			manager.Display(builder.Build());
+
 		}
 	}
 }

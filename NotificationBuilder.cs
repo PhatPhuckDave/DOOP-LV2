@@ -11,6 +11,14 @@ namespace LV3 {
 		private ConsoleColor color;
 		private string text;
 
+		public NotificationBuilder() {
+			this.author = "Pera";
+			this.title = "Title";
+			this.time = DateTime.Now;
+			this.level = Category.ERROR;
+			this.text = "Sample text";
+		}
+
 		public ConsoleNotification Build() {
 			return new ConsoleNotification(this.author, this.title, this.text, this.time, this.level, this.color);
 		}
