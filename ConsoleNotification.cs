@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LV3 {
 	public enum Category { ERROR, ALERT, INFO }
-	public class ConsoleNotification {
+	class ConsoleNotification : IPrototype {
 		public String Author { get; private set; }
 		public String Title { get; private set; }
 		public String Text { get; private set; }
@@ -19,6 +17,9 @@ namespace LV3 {
 			this.Timestamp = time;
 			this.Level = level;
 			this.Color = color;
+		}
+		public IPrototype Clone() {
+			return (IPrototype)this.MemberwiseClone();
 		}
 	}
 }

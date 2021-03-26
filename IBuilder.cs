@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LV3 {
-	public interface IBuilder {
+	interface IBuilder {
 		ConsoleNotification Build();
 		IBuilder SetAuthor(String author);
 		IBuilder SetTitle(String title);
